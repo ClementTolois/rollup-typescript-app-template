@@ -5,15 +5,15 @@
     "main": "index.js",
     "type": "module",
     "scripts": {
-        "build": "rollup -c --compact",
-        "dev": "rollup -c -w"
+        "build": "rollup -c rollup.config.prod.js",
+        "dev": "rollup -c rollup.config.dev.js -w"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
-    "dependencies": {},
     "devDependencies": {
         "@rollup/plugin-run": "^3.0.1",
+        "@rollup/plugin-terser": "^0.4.1",
         "@rollup/plugin-typescript": "^11.1.0",
         "@types/node": "^18.15.11",
         "rollup": "^3.20.4",
