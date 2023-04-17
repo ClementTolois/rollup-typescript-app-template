@@ -1,7 +1,7 @@
 {
-    "name": "typescript-app-template",
+    "name": "rollup-typescript-app-template",
     "version": "1.0.0",
-    "description": "",
+    "description": "An easy to use template for creating a TypeScript app with Rollup",
     "main": "index.js",
     "type": "module",
     "scripts": {
