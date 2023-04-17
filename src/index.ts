@@ -1,2 +1,2 @@
-import Welcome from "./core/Welcome";
+import Welcome from "@/core/Welcome";
 Welcome.greetings();
