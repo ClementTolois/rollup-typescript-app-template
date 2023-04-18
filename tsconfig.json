@@ -5,10 +5,12 @@
             "@/*": ["src/*"]
         },
         "esModuleInterop": true,
-        "strict": true
+        "strict": true,
+        "declaration": true,
+        "declarationDir": "dist"
     },
     "include": [
-        "src/**/*"
+        "src/**/*.ts"
     ],
     "exclude": [
         "src/**/*.test.ts",
