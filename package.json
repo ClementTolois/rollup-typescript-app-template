@@ -2,16 +2,20 @@
     "name": "rollup-typescript-app-template",
     "version": "1.0.0",
     "description": "An easy to use template for creating a TypeScript app with Rollup",
-    "main": "index.js",
+    "main": "dist/index.cjs.js",
+    "module": "dist/index.esm.js",
+    "browser": "dist/index.umd.js",
     "type": "module",
     "scripts": {
-        "build": "rollup -c rollup.config.prod.js",
-        "dev": "rollup -c rollup.config.dev.js -w"
+        "build": "rollup -c",
+        "dev": "rollup -c -w"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "devDependencies": {
+        "@rollup/plugin-commonjs": "^24.1.0",
+        "@rollup/plugin-node-resolve": "^15.0.2",
         "@rollup/plugin-run": "^3.0.1",
         "@rollup/plugin-terser": "^0.4.1",
         "@rollup/plugin-typescript": "^11.1.0",
