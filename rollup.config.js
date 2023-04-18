@@ -1,39 +1,34 @@
 import typescript from "@rollup/plugin-typescript";
-import resolve from "@rollup/plugin-node-resolve";
-import commonjs from "@rollup/plugin-commonjs";
 import run from "@rollup/plugin-run";
-import terser from '@rollup/plugin-terser';
+import terser from "@rollup/plugin-terser";
 import { readFileSync } from "fs";
 
 const pkg = JSON.parse(readFileSync("./package.json", "utf-8"));
 
-const production = !process.env.ROLLUP_WATCH;
+const PRODUCTION = !process.env.ROLLUP_WATCH;
+const APP_NAME = "typescriptApp";
 
 export default [
-  {
-    input: "src/index.ts",
-    output: {
-      file: pkg.browser,
-      format: "umd",
+    {
+        input: "src/index.ts",
+        output: [
+            {
+                file: pkg.browser,
+                format: "umd",
+                name: APP_NAME,
+            },
+            {
+                file: pkg.main,
+                format: "cjs",
+            },
+            {
+                file: pkg.module,
+                format: "es",
+            },
+        ],
+        plugins: [
+            typescript(),
+            PRODUCTION ? terser() : run(),
+        ],
     },
-    plugins: [
-      resolve(),
-      commonjs(),
-      typescript(),
-      production ? terser() : run(),
-    ],
-  },
-  {
-    input: "src/index.ts",
-    output: [
-      {
-        file: pkg.main,
-        format: "cjs",
-      },
-      {
-        file: pkg.module,
-        format: "es",
-      },
-    ],
-  },
 ];
