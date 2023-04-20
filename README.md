@@ -6,3 +6,4 @@ This project is one of my test to create an easy to use template for a TypeScrip
 
 * `(pnpm|npm|yarn) run build` - Build the project
 * `(pnpm|npm|yarn) run dev` - Build and run the project in watch mode
+* `(pnpm|npm|yarn) run lint` - Lint the project
