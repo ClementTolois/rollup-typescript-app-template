@@ -27,7 +27,9 @@ export default [
             },
         ],
         plugins: [
-            typescript(),
+            typescript({
+                exclude: "**/__tests__/**",
+            }),
             PRODUCTION ? terser() : run(),
         ],
     },
