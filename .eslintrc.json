@@ -31,5 +31,5 @@
             "always"
         ]
     },
-	"ignorePatterns":["dist/*"]
+	"ignorePatterns":["*.js","*.d.ts"]
 }
