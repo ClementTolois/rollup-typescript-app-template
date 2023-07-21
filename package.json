@@ -6,7 +6,6 @@
     "module": "dist/index.esm.js",
     "browser": "dist/index.umd.js",
     "typings": "dist/index.d.ts",
-    "type": "module",
     "scripts": {
         "build": "rollup -c",
         "dev": "rollup -c -w",
